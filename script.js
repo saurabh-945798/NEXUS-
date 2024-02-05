@@ -1,3 +1,18 @@
+const panels = document.querySelectorAll(".panel");
+
+panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+        removeActiveClasses();
+        panel.classList.add("active");
+    });
+});
+
+function removeActiveClasses() {
+    panels.forEach((panel) => {
+        panel.classList.remove("active");
+    })
+}
+
 
 gsap.fromTo(
   ".loading-page",
@@ -190,7 +205,6 @@ let imgSliderTimeline = gsap.timeline({
 imgSliderTimeline.to(imgSlider, {
   x: -calculateSliderX,
 });
-
 
 
 
